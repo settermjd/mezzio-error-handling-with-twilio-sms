@@ -45,6 +45,12 @@ class ConfigProvider
             'factories'  => [
                 Handler\HomePageHandler::class => Handler\HomePageHandlerFactory::class,
                 LoggerInterface::class => LoggerFactory::class,
+                SmsErrorListener::class => SmsErrorListenerFactory::class,
+            ],
+            'delegators' => [
+                ErrorHandler::class => [
+                    SmsErrorListenerDelegatorFactory::class,
+                ],
             ],
         ];
     }
