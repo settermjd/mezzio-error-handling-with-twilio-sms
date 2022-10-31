@@ -77,7 +77,8 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "@development-enable"
+            "@development-enable",
+            "php -r \"copy('.env.example', '.env');\""
         ],
         "development-disable": "laminas-development-mode disable",
         "development-enable": "laminas-development-mode enable",
